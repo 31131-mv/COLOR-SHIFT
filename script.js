@@ -257,6 +257,186 @@
       ],
       springs: [],
       tutorialHints: []
+    },
+
+    // ----------------------------------------------------
+    // FASE 6: REFLEXO (Alta velocidade, precisão e trocas rápidas)
+    // ----------------------------------------------------
+    {
+      id: 6,
+      name: 'REFLEXO',
+      subtitle: 'Trocas ágeis de cor, plataformas menores e saltos cirúrgicos',
+      spawn: { x: 50, y: 390 },
+      door: { x: 880, y: 118, w: 34, h: 52 },
+      platforms: [
+        // Plataforma inicial neutra
+        { x: 20, y: 440, w: 75, h: 25, color: 'neutral' },
+        // Plataformas estreitas com alternância contínua de cores
+        { x: 125, y: 410, w: 55, h: 18, color: 'blue' },
+        { x: 210, y: 375, w: 52, h: 18, color: 'red' },
+        { x: 295, y: 340, w: 52, h: 18, color: 'green' },
+        // Ilha neutra de estabilização
+        { x: 485, y: 300, w: 55, h: 20, color: 'neutral' },
+        // Sequência aérea de alta precisão
+        { x: 570, y: 265, w: 50, h: 18, color: 'red' },
+        { x: 735, y: 175, w: 50, h: 18, color: 'blue' },
+        { x: 810, y: 170, w: 50, h: 18, color: 'red' },
+        // Plataforma da porta
+        { x: 865, y: 170, w: 80, h: 25, color: 'neutral' }
+      ],
+      movingPlatforms: [
+        // 1. Plataforma móvel azul horizontal
+        {
+          x: 375, y: 310, w: 58, h: 18, color: 'blue',
+          minX: 370, maxX: 450, minY: 310, maxY: 310,
+          speedX: 1.8, speedY: 0
+        },
+        // 2. Elevador móvel verde vertical
+        {
+          x: 645, y: 260, w: 54, h: 18, color: 'green',
+          minX: 645, maxX: 645, minY: 175, maxY: 265,
+          speedX: 0, speedY: 1.7
+        }
+      ],
+      spikes: [
+        // Fossa de espinhos no solo
+        { x: 95, y: 510, w: 845, h: 25 },
+        // Espinho suspenso de precisão
+        { x: 420, y: 380, w: 40, h: 20 }
+      ],
+      springs: [],
+      tutorialHints: []
+    },
+
+    // ----------------------------------------------------
+    // FASE 7: LABIRINTO (Raciocínio, caminhos e alternância seletiva)
+    // ----------------------------------------------------
+    {
+      id: 7,
+      name: 'LABIRINTO',
+      subtitle: 'Navegue pelo labirinto de cores e encontre a rota correta',
+      spawn: { x: 50, y: 400 },
+      door: { x: 885, y: 118, w: 34, h: 52 },
+      platforms: [
+        // Início neutro
+        { x: 20, y: 450, w: 75, h: 25, color: 'neutral' },
+        // Rota inferior (aparente atalho bloqueado por espinhos visíveis)
+        { x: 120, y: 450, w: 65, h: 18, color: 'green' },
+        { x: 205, y: 450, w: 65, h: 18, color: 'red' },
+        // Rota superior verdadeira de escalada
+        { x: 125, y: 400, w: 65, h: 18, color: 'blue' },
+        { x: 215, y: 350, w: 65, h: 18, color: 'red' },
+        { x: 305, y: 300, w: 65, h: 18, color: 'green' },
+        // Encruzilhada central (Ilha neutra)
+        { x: 395, y: 260, w: 65, h: 20, color: 'neutral' },
+        // Rota alta com obstáculo de espinho visível à frente
+        { x: 485, y: 220, w: 60, h: 18, color: 'red' },
+        // Rota intermediária correta
+        { x: 575, y: 320, w: 65, h: 18, color: 'green' },
+        { x: 665, y: 280, w: 60, h: 18, color: 'red' },
+        // Passo alto para o portal
+        { x: 820, y: 175, w: 55, h: 18, color: 'blue' },
+        // Plataforma da porta
+        { x: 875, y: 170, w: 75, h: 25, color: 'neutral' }
+      ],
+      movingPlatforms: [
+        // Elevador Azul que liga a Encruzilhada à Rota Mediana
+        {
+          x: 485, y: 330, w: 65, h: 18, color: 'blue',
+          minX: 485, maxX: 485, minY: 250, maxY: 340,
+          speedX: 0, speedY: 1.5
+        },
+        // Plataforma Móvel Verde horizontal que atravessa o abismo final
+        {
+          x: 745, y: 230, w: 65, h: 18, color: 'green',
+          minX: 740, maxX: 815, minY: 230, maxY: 230,
+          speedX: 1.6, speedY: 0
+        }
+      ],
+      spikes: [
+        // Abismo inferior contínuo
+        { x: 95, y: 510, w: 845, h: 25 },
+        // Espinho de bloqueio na rota baixa falsa
+        { x: 285, y: 440, w: 60, h: 20 },
+        // Espinhos no teto bloqueando avanço cego superior
+        { x: 640, y: 160, w: 60, h: 20 },
+        // Espinho divisor no poço central
+        { x: 380, y: 440, w: 70, h: 20 }
+      ],
+      springs: [],
+      tutorialHints: []
+    },
+
+    // ----------------------------------------------------
+    // FASE 8: FINAL: COLOR SHIFT (O Desafio Supremo)
+    // ----------------------------------------------------
+    {
+      id: 8,
+      name: 'FINAL: COLOR SHIFT',
+      subtitle: 'O clímax definitivo: domine todas as mecânicas!',
+      spawn: { x: 45, y: 420 },
+      door: { x: 908, y: 78, w: 34, h: 52 },
+      platforms: [
+        // --- 1. INÍCIO (Plataforma Inicial Neutra) ---
+        { x: 25, y: 450, w: 70, h: 25, color: 'neutral' },
+
+        // --- 2. PLATAFORMAS INICIAIS ---
+        // Primeiro salto: o jogador inicia na cor Azul
+        { x: 125, y: 420, w: 42, h: 18, color: 'blue' },
+
+        // --- 3. TROCA DE COR (Ritmo inicial de alternância) ---
+        // Salto exigindo troca para Vermelho [ 2 ]
+        { x: 195, y: 390, w: 42, h: 18, color: 'red' },
+        // Salto exigindo troca para Verde [ 3 ]
+        { x: 265, y: 360, w: 42, h: 18, color: 'green' },
+
+        // --- 4. PLATAFORMAS INTERMEDIÁRIAS ---
+        // Salto exigindo troca para Azul [ 1 ]
+        { x: 335, y: 330, w: 42, h: 18, color: 'blue' },
+        // Ilha neutra de apoio e descanso estratégico
+        { x: 405, y: 305, w: 50, h: 20, color: 'neutral' },
+
+        // --- 5. ÁREA DE ESPINHOS COM PASSAGEM POSSÍVEL ---
+        // Plataforma Vermelha de precisão sobre a fossa
+        { x: 480, y: 280, w: 42, h: 18, color: 'red' },
+        // Plataforma Verde de precisão ultrapassando o espinho suspenso
+        { x: 555, y: 255, w: 42, h: 18, color: 'green' },
+
+        // --- 7. NOVAS TROCAS DE COR (Clímax de precisão) ---
+        // Plataforma Azul pequena aérea
+        { x: 785, y: 170, w: 40, h: 18, color: 'blue' },
+        // Plataforma Verde de alta precisão
+        { x: 845, y: 150, w: 40, h: 18, color: 'green' },
+
+        // --- 8. PLATAFORMAS FINAIS E DECK DA PORTA ---
+        // Deck final neutro e seguro da porta de saída
+        { x: 900, y: 130, w: 52, h: 25, color: 'neutral' }
+      ],
+      movingPlatforms: [
+        // --- 6. PLATAFORMAS MÓVEIS ---
+        // 1. Elevador Azul vertical que eleva o jogador
+        {
+          x: 625, y: 250, w: 46, h: 18, color: 'blue',
+          minX: 625, maxX: 625, minY: 185, maxY: 250,
+          speedX: 0, speedY: 1.5
+        },
+        // 2. Plataforma Vermelha móvel horizontal que conecta o elevador ao trecho final
+        {
+          x: 655, y: 180, w: 46, h: 18, color: 'red',
+          minX: 655, maxX: 715, minY: 180, maxY: 180,
+          speedX: 1.6, speedY: 0
+        }
+      ],
+      spikes: [
+        // Fossa completa de abismo inferior (queda fatal)
+        { x: 75, y: 510, w: 875, h: 25 },
+        // Espinhos intermediários protegendo a parte inferior da área de espinhos
+        { x: 450, y: 355, w: 120, h: 20 },
+        // Espinho de precisão entre as plataformas do trecho de espinhos
+        { x: 528, y: 295, w: 22, h: 18 }
+      ],
+      springs: [],
+      tutorialHints: []
     }
   ];
 
@@ -275,15 +455,15 @@
   };
 
   let currentState = GameState.MENU;
-  let currentLevelIndex = 0; // 0 a 4
+  let currentLevelIndex = 0; // 0 a 7
   let lives = 3;
-  let unlockedLevel = 1; // De 1 a 5
+  let unlockedLevel = 1; // De 1 a 8
 
   // Carrega progresso salvo do localStorage
   try {
     const saved = localStorage.getItem('colorshift_unlocked_level');
     if (saved) {
-      unlockedLevel = Math.max(1, Math.min(5, parseInt(saved, 10) || 1));
+      unlockedLevel = Math.max(1, Math.min(LEVELS.length, parseInt(saved, 10) || 1));
     }
   } catch (e) {
     unlockedLevel = 1;
@@ -447,7 +627,7 @@
 
       card.className = `level-card ${isLocked ? 'locked' : ''} ${isCurrent ? 'current' : ''}`;
       card.innerHTML = `
-        <div class="level-num">${level.id}</div>
+        <div class="level-num">FASE ${level.id}</div>
         <div class="level-status-icon">${isLocked ? '🔒' : '▶'}</div>
         <div class="level-name-tag">${level.name}</div>
       `;
@@ -526,7 +706,7 @@
   }
 
   function updateHUD() {
-    hudLevelText.textContent = `${currentLevelIndex + 1}/5`;
+    hudLevelText.textContent = `${currentLevelIndex + 1}/${LEVELS.length}`;
 
     // Atualiza corações de vidas
     hudLivesContainer.innerHTML = '';
@@ -854,13 +1034,13 @@
 
     // Desbloqueia próxima fase se não estava desbloqueada
     const nextLevelNum = currentLevelIndex + 2;
-    if (nextLevelNum > unlockedLevel && nextLevelNum <= 5) {
+    if (nextLevelNum > unlockedLevel && nextLevelNum <= LEVELS.length) {
       unlockedLevel = nextLevelNum;
       saveProgress();
     }
 
-    // Se completou a Fase 5 (última fase):
-    if (currentLevelIndex === 4) {
+    // Se completou a última fase (Fase 8):
+    if (currentLevelIndex === LEVELS.length - 1) {
       setGameState(GameState.GAME_WIN);
     } else {
       setGameState(GameState.LEVEL_WIN);
@@ -1231,9 +1411,9 @@
     ctx.save();
 
     const time = Date.now() * 0.003;
-    const isLevel5 = currentLevelIndex === 4;
-    const doorColor = isLevel5 ? '#ffd700' : '#00f0ff';
-    const doorGlow = isLevel5 ? 'rgba(255, 215, 0, 0.8)' : 'rgba(0, 240, 255, 0.8)';
+    const isFinalLevel = currentLevelIndex === LEVELS.length - 1;
+    const doorColor = isFinalLevel ? '#ffd700' : '#00f0ff';
+    const doorGlow = isFinalLevel ? 'rgba(255, 215, 0, 0.8)' : 'rgba(0, 240, 255, 0.8)';
 
     // Brilho exterior da porta
     ctx.shadowColor = doorGlow;
@@ -1531,7 +1711,7 @@
 
   // Vitória da Fase
   document.getElementById('btn-win-next').addEventListener('click', () => {
-    if (currentLevelIndex < 4) {
+    if (currentLevelIndex < LEVELS.length - 1) {
       startLevel(currentLevelIndex + 1);
     } else {
       setGameState(GameState.GAME_WIN);
